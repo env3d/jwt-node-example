@@ -30,9 +30,6 @@ module.exports = async function validateJwt(token) {
     // we now need to convert the certificate to pem format
     let pem = jwkToPem(key[0]);
 
-    // Verify the token against the pem key
-
-
     // We use the PEM cert to verify the token is signed by google
     try {
 	let result = await jwt.verify(token, pem);
